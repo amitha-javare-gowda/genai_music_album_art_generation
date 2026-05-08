@@ -50,6 +50,8 @@ def parse_args():
 
 
 def save_checkpoint(model, optimizer, scaler, epoch, step, loss, path):
+    """Save model, optimizer and scaler state to disk."""
+    
     torch.save({
         'epoch':     epoch,
         'step':      step,
@@ -62,6 +64,8 @@ def save_checkpoint(model, optimizer, scaler, epoch, step, loss, path):
 
 
 def load_checkpoint(path, model, optimizer, scaler):
+    """Load model, optimizer and scaler state from checkpoint file."""
+    
     ckpt = torch.load(path, map_location='cpu')
     model.load_state_dict(ckpt['model'])
     optimizer.load_state_dict(ckpt['optimizer'])
@@ -85,6 +89,8 @@ def log_samples(ddpm, val_loader, device, step, num_samples=4):
 
 
 def get_lr(step, warmup_steps, base_lr):
+    """Linear warmup: ramp lr from 0 to base_lr over warmup_steps steps."""
+    
     if step < warmup_steps:
         return base_lr * step / warmup_steps
     return base_lr
