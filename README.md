@@ -141,7 +141,7 @@ The fix was two things: give each sweep run a unique checkpoint name based on it
 
 The generated images are abstract color compositions rather than recognizable album art. Looking at the W&B sample comparisons, the real covers have strong compositional structure, bold graphic design, and clear visual intent. The generated outputs have texture and distinct color regions but no coherent structure.
 
-The model is doing something meaningful. Different audio inputs produce different outputs. BTS produced purple and violet tones, electronic FMA tracks produced reds and oranges, and folk tracks produced warmer earthier colors. The audio conditioning is influencing the generation. But the model has not learned how to compose an image, only what color palette loosely corresponds to a genre.
+The model is doing something meaningful. Different audio inputs produce different outputs. Electronic FMA tracks produced reds and oranges, and folk tracks produced warmer earthier colors. The audio conditioning is influencing the generation. But the model has not learned how to compose an image, only what color palette loosely corresponds to a genre.
 
 This comes down to scale. With 5,461 training pairs the model sees each image roughly 500 times across training. That is enough to learn color statistics but nowhere near enough to learn compositional structure. Album art is also an extremely diverse visual category with no consistent structure even within a genre, which makes the learning problem harder than something like faces or bedrooms where layouts follow predictable patterns.
 
