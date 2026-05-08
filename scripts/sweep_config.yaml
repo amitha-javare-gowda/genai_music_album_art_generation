@@ -1,0 +1,37 @@
+program: train.py
+method: grid
+project: spectrogen
+name: hyperparam_sweep_v2
+
+parameters:
+  schedule:
+    values: [cosine, linear]
+  T:
+    values: [250, 500]
+  embed_dim:
+    values: [128, 256]
+
+  covers_dir:
+    value: /projects/p32506/spectrogen/data/covers_128
+  spectro_dir:
+    value: /projects/p32506/spectrogen/data/spectrograms
+  batch_size:
+    value: 32
+  epochs:
+    value: 50
+  lr:
+    value: 2e-4
+  base_channels:
+    value: 64
+  num_workers:
+    value: 8
+  ckpt_dir:
+    value: /projects/p32506/spectrogen/checkpoints
+  wandb_project:
+    value: spectrogen
+  log_every:
+    value: 100
+  sample_every:
+    value: 500
+  save_every:
+    value: 25
