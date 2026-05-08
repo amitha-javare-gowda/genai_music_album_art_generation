@@ -123,7 +123,7 @@ The loss curves looked healthy. Both train and val loss dropped sharply from aro
 
 This is a real tension with diffusion models on small datasets. The MSE loss on predicted noise can be low even when images lack structure, because predicting average noise statistics across 5,461 examples is easier than learning the full visual distribution. The model learned what colors album art tends to use but not how album art is composed.
 
-What would genuinely fix this going forward is more data. FMA Large has 106k tracks and is partially downloaded on Quest. With around 60k valid pairs the model would encounter far more visual diversity and likely produce more structured outputs. Adding a perceptual loss like LPIPS alongside MSE would also push the model to preserve edges and structure. Longer term, running diffusion in a pretrained latent space rather than pixel space would make the learning task much more tractable at this data scale.
+What would genuinely fix this going forward is more data. FMA Large has 106k tracks. With around 60k valid pairs the model would encounter far more visual diversity and likely produce more structured outputs. Adding a perceptual loss like LPIPS alongside MSE would also push the model to preserve edges and structure. Longer term, running diffusion in a pretrained latent space rather than pixel space would make the learning task much more tractable at this data scale.
 
 ### U-Net Channel Dimension Bug
 
