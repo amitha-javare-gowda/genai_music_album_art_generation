@@ -20,6 +20,20 @@ from encoder   import AudioEncoder
 from unet      import UNet
 from diffusion import DDPM
 
+import gdown
+import os
+
+def download_checkpoint():
+    ckpt_path = "checkpoints/spectrogen_final_best.pt.pt"
+    if not os.path.exists(ckpt_path):
+        os.makedirs("checkpoints", exist_ok=True)
+        # Replace with your Google Drive file ID
+        gdown.download(
+            "https://drive.google.com/uc?id=YOUR_FILE_ID",
+            ckpt_path, quiet=False
+        )
+    return ckpt_path
+
 # ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title  = "SpectroGen",

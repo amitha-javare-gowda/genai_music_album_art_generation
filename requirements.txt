@@ -1,0 +1,9 @@
+torch
+torchvision
+torchaudio
+streamlit
+librosa
+numpy
+Pillow
+gdown
+matplotlib
